@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/signin.css">
+    <script type="text/javascript" src="/static/js/jquery-1.11.0.js"></script>
+    <script>
+        $(function () {
+            $("#getcatch").click(function () {
+                $.post('http://tiantang.mogencloud.com/web/api/login/code?phone='+$("#tel").val(),headers={
+        'user-agent': 'Dart/2.10 (dart:io)',
+        'version': '{appVerison: 1.2.3}',
+        'accept-encoding': 'gzip',
+        'content-length': '0',
+        'host': 'tiantang.mogencloud.com',
+        'platform': 'ios'
+    })
+                
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <form class="form-signin" action method="post" novalidate>
+        <h2 class="form-signin-heading">甜糖token在线获取</h2>
+
+        <input type="tel" id="tel" name="tel" class="form-control" placeholder="手机号">
+        <button class="btn btn-lg btn-primary btn-block" id="getcatch" type='button'>获取验证码</button>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="text" id="inputPassword"  name="catch" class="form-control" placeholder="验证码" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">获取token</button>
+        <h2></h2>
+    </form>
+
+</div> <!-- /container -->
+
+</body>
+
+</html>
